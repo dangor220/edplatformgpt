@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  font-size: 19px;
+  background-color: #f4f4f483;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.task {
+  padding: 20px;
+}
+.task__data {
+  max-width: 600px;
+}
+.task__ai-helper {
+  position: relative;
+  z-index: -1;
+  padding: 20px;
+  width: 700px;
+  text-align: justify;
+  background-color: #ffffff;
+  border: 1px solid #7d7d7d;
+}
+
+.task__ai-helper::before {
+  content: "AI helper";
+  position: absolute;
+  z-index: -2;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 50px;
+  font-weight: bold;
+  color: #e2e2e280;
+}
+
+.task__title {
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+}
+.task .task__condition {
+  text-align: justify;
+}
+.task__solution h2 {
+  font-style: 30px;
+}
+.task__solution-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task__answer {
+  font-family: "Source Code Pro", monospace;
+  font-size: 17px;
+  width: 600px;
+  height: 300px;
+  padding: 20px;
+  resize: vertical;
+}
+.task__answer:focus {
+  outline: none !important;
+  box-shadow: 0 0 10px #e2e0e0;
+}
+.task__submit {
+  font-size: 17px;
+  padding: 8px 18px;
+  cursor: pointer;
+}
+.task {
+  display: flex;
+  gap: 40px;
+}

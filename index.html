@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>edPlatform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300;0,400;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="task">
+      <div class="task__data">
+        <h1 class="task__title">Задача:</h1>
+        <p class="task__condition">
+          Дана строка s. Необходимо перевернуть эту строку. То есть последняя
+          буква строки должна стать первой, предпоследняя буква строки должна
+          стать второй, и так далее. Например, перевернутая строка «abddea»
+          равна «aeddba».
+        </p>
+
+        <div class="task__solution">
+          <div class="task__solution-menu">
+            <h2>Решение:</h2>
+            <button class="task__submit">Проверить</button>
+          </div>
+
+          <div>
+            <textarea class="task__answer"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="task__ai-helper" id="type"></div>
+    </div>
+
+    <script type="module" src="script-gpt.js"></script>
+  </body>
+</html>
