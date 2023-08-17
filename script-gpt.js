@@ -12,6 +12,7 @@ async function checkSolution() {
   const context = `Сбрось предыдущий контекст. Задача состоит в проверке решения: "${userData}", для следующей задачи: "${taskData}". В решении используется язык программирования JavaScript. Если решение верное, сообщи пользователю об этом. Если есть возможность улучшить код, предоставь подсказки по оптимизации. В случае, если решение неверное, помоги определить место, где допущена ошибка, и предоставь пошаговый алгоритм, который поможет лучше понять принципы решения задачи. Не нужно предоставлять код решения! Ответ пользователь дать сам.`;
 
   if (!userData) return false;
+  aiHelper.innerHTML = "Формируется ответ. Подождите...";
 
   try {
     const response = await fetch(
@@ -23,13 +24,19 @@ async function checkSolution() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          model: "gpt-4",
+          model: "gpt-3.5-turbo-16k",
           messages: [{ role: "user", content: context }],
         }),
       }
     );
 
+    if (response.status === 200) {
+      aiHelper.innerHTML = "";
+    }
+
     const result = await response.json();
+
+    console.log(result);
 
     let i = 0;
     let txt = result.choices[0].message.content;
